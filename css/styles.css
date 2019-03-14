@@ -1,375 +1,696 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	scroll-behavior: smooth;
+}
+
 body {
+	background-color: white;
+	font-size: 16px; 
+	font-family: 'Jaldi', sans-serif;
+}
+
+.hidden {
+	display: none;
+}
+
+a {
+	cursor: pointer;
+}
+.row {
+	color: black;
+
+}
+
+.row a {
+	color: black;
+}
+.row a:hover, .row a:focus {
+	text-decoration: none;
+	
+}
+
+
+.page1 {
+	transition: 0.3s;
+	-webkit-transition-duration: 0.3s; /* Safari */
+	display: none;
+}
+
+.loading {
+	width:270px;
+	height:150px;
+	
+}
+.navigator {
+	margin-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 90px;
+
+}
+
+li {
+  width: 100%;
+  float: right;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease; /* Safari */
+  transform: scale(1.5);
+  opacity: .66;
+}
+
+li a:hover {
+  text-shadow: 1px 1px;
+}
+
+.active-nav {
+	opacity: 1;
+}
+
+.active-nav a:hover {
+  text-shadow: none;
+}
+
+#icon img{
+	margin-left: 40px;
+	cursor: pointer;
+}
+
+
+.main-content {
+	display: block;
+	margin: 100px 0 0 0;
+	transition: 2s ease;
+	-webkit-transition: 2s ease; /* Safari */
+}
+
+.main-content img {
+	transition: 0.5s;
+	-webkit-transition: 0.5s; /* Safari */
+	margin: 0;
+	padding: 0;
+	float: left;
+	height: 550px;
+	
+}
+
+
+.middle, .middle1, .middle2, .middle3, .middle4, .middle5, .middle6, .middle7, .middle8, .middle9, .middle10, .middle11, .middle12, .middle13, .middle14, .middle15, .middle16 {
+  transition: 3s ease;
+  -webkit-transition: 3s ease; /* Safari */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+
+}
+
+.text {
+  border: solid 3px blue;
+  color: white;
   font-size: 16px;
-  color: #fff;
-  background-color: #61122f;
-  font-family: 'Oxygen', sans-serif;
+  border-radius: 50px;
+  padding: 16px 32px;
 }
 
-/** HEADER **/
-#header-nav {
-  background-color: #f6b319;
-  border-radius: 0;
-  border: 0;
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	margin: 0;
+	padding: 0;
 }
 
-#logo-img {
-  background: url('../images/restaurant-logo_large.png') no-repeat;
-  width: 150px;
-  height: 150px;
-  margin: 10px 15px 10px 0;
+
+.modal, .modal1, .modal2, .modal3, .modal4, .modal5, .modal6, .modal7, .modal8, .modal9, .modal10, .modal11, .modal12, .modal3 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
 }
 
-.navbar-brand {
-  padding-top: 25px;
+.square img {
+	right: auto;
+	left: auto;
+	margin: 0;
 }
-.navbar-brand h1 { /* Restaurant name */
-  font-family: 'Lora', serif;
-  color: #557c3e;
-  font-size: 1.5em;
-  text-transform: uppercase;
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: .75;
+  transition: 0.3s;
 }
-.navbar-brand a:hover, .navbar-brand a:focus {
+
+.close:hover,
+.close:focus {
+  color: #bbb;
   text-decoration: none;
-}
-.navbar-brand p { /* Kosher cert */
-  color: #000;
-  text-transform: uppercase;
-  font-size: .7em;
-  margin-top: 15px;
-}
-.navbar-brand p span { /* Star-K */
-  vertical-align: middle;
+  cursor: pointer;
 }
 
-#nav-list {
-  margin-top: 10px;
-}
-#nav-list a {
-  color: #951C49;
-  text-align: center;
-}
-#nav-list a:hover {
-  background: #E7E7E7;
-}
-#nav-list a span {
-  font-size: 1.8em;
+.caption {
+	background-color: white;
+	margin-top: 9px;
 }
 
-#phone {
-  margin-top: 5px;
-}
-#phone a { /* Phone number */
-  text-align: right;
-  padding-bottom: 0;
-}
-#phone div { /* We Deliver */
-  color: #557c3e;
-  text-align: right;
-  padding-right: 15px;
+
+.caption h1, .caption h2 {
+	text-align: center;
+
 }
 
-.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #61122f;
-}
-.navbar-header button.navbar-toggle {
-  clear: both;
-  margin-top: -30px;
-}
-/* END HEADER */
 
-/* FOOTER */
-.panel-footer {
-  margin-top: 30px;
-  padding-top: 35px;
-  padding-bottom: 30px;
-  background-color: #222;
-  border-top: 0;
+/* Add Animation */
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
 }
-.panel-footer div.row {
-  margin-bottom: 35px;
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
 }
-#hours, #address {
-  line-height: 2;
-}
-#hours > span, #address > span {
-  font-size: 1.3em;
-}
-#address p {
-  color: #557c3e;
-  font-size: .8em;
-  line-height: 1.8;
-}
-#testimonials {
-  font-style: italic;
-}
-#testimonials p:nth-child(2) {
-  margin-top: 25px;
-}
-/* END FOOTER */
 
 
 
-/* HOME PAGE */
-.container .jumbotron {
-  box-shadow: 0 0 50px #3F0C1F;
-  border: 2px solid #3F0C1F;
+/* About me page*/
+.main-content2 {
+	display: none;
+	margin-top: 60px;
+	/*margin-bottom: 60px;
+	padding-bottom: 60px;*/
+	transition: 3s ease;
+	-webkit-transition: 3s ease; /* Safari */
 }
 
-#menu-tile, #specials-tile, #map-tile {
-  height: 250px;
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  border: 2px solid #3F0C1F;
-  overflow: hidden;
-}
-#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
-}
-#menu-tile {
-  background: url('../images/menu-tile.jpg') no-repeat;
-  background-position: center;
-}
-#specials-tile {
-  background: url('../images/specials-tile.jpg') no-repeat;
-  background-position: center;
-}
-#menu-tile span, #specials-tile span, #map-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.6em;
-  text-transform: uppercase;
-  background-color: #000;
-  color: #fff;
-  opacity: .8;
-}
-/* END HOME PAGE */
-
-/* MENU CATEGORIES PAGE */
-.category-tile { 
-  position: relative;
-  border: 2px solid #3F0C1F;
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 15px;
-}
-.category-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  background-color: #000;
-  color: #fff;
-  opacity: .8;
-}
-.category-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
+.container-mod {
+	background-color: Cornsilk;
+	animation-name: backgroundColor;
+	animation-duration: 10s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
 }
 
-#menu-categories-title + div {
-  margin-bottom: 50px;
+@keyframes backgroundColor {
+  0%   {background-color:Cornsilk;}
+  25%   {background-color:AliceBlue;}
+  50%   {background-color:AliceBlue;}
+  100%   {background-color:Cornsilk;}
 }
-/* END MENU CATEGORIES PAGE */
 
-/* SINGLE CATEGORY PAGE */
-.menu-item-tile {
-  margin-bottom: 25px;
-}
-.menu-item-tile hr {
-  width: 80%;
-}
-.menu-item-tile .menu-item-price {
-  font-size: 1.1em;
-  text-align: right;
-  margin-top: -15px;
-  margin-right: -15px;
-}
-.menu-item-tile .menu-item-price span {
-  font-size: .6em;
-}
-.menu-item-photo {
-  position: relative;
-  border: 2px solid #3F0C1F; 
-  overflow: hidden;
-  padding: 0;
-  margin-right: -15px;
+
+.center {
+  display: block;
   margin-left: auto;
-  margin-bottom: 20px;
-  max-width: 250px;
-}
-.menu-item-photo div {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80px;
-  background-color: #557c3e;
-  text-align: center;
-}
-.menu-item-description {
-  padding-right: 30px;
-}
-h3.menu-item-title {
-  margin: 0 0 10px;
-}
-.menu-item-details {
-  font-size: .9em;
-  font-style: italic;
-}
-/* END SINGLE CATEGORY PAGE */
-
-
-/********** Large devices only **********/
-@media (min-width: 1200px) {
-  .container .jumbotron {
-    background: url('../images/jumbotron_1200.jpg') no-repeat;
-    height: 675px;
-  }
+  margin-right: auto;
+  width:20%;
+  height: 200px;
 }
 
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* Header */
-  #logo-img {
-    background: url('../images/restaurant-logo_medium.png') no-repeat;
-    width: 100px;
-    height: 100px;
-    margin: 5px 5px 5px 0;
-  }
-  /* End Header */
-
-  /* Home Page */
-  .container .jumbotron {
-    background: url('../images/jumbotron_992.jpg') no-repeat;
-    height: 558px;
-  }
-  /* End Home Page */
+.personal-picture {
+	padding: 40px;
+	margin-bottom: 50px;
 }
 
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-  /* Home Page */
-  .container .jumbotron {
-    background: url('../images/jumbotron_768.jpg') no-repeat;
-    height: 432px;
-  }
-  /* End Home Page */
-}
-
-/********** Extra small devices only **********/
-@media (max-width: 767px) {
-  /* Header */
-  .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
-  }
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 10px;
-    font-size: 5vw; /* 1vw = 1% of viewport width */
-  }
-  .navbar-brand p { /* Kosher cert */
-    font-size: .6em;
-    margin-top: 12px;
-  }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
-  }
-
-  #collapsable-nav a { /* Collapsed nav menu text */
-    font-size: 1.2em;
-  }
-  #collapsable-nav a span { /* Collapsed nav menu glyph */
-    font-size: 1em;
-    margin-right: 5px;
-  }
-
-  #call-btn > a {
-    font-size: 1.5em;
-    display: block;
-    margin: 0 20px;
-    padding: 10px;
-    border: 2px solid #fff;
-    background-color: #f6b319;
-    color: #951c49;
-  }
-  #xs-deliver {
-    margin-top: 5px;
-    font-size: .7em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-  /* End Header */
-
-  /* Footer */
-  .panel-footer section {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .panel-footer section:nth-child(3) {
-    margin-bottom: 0; /* margin already exists on the whole row */
-  }
-  .panel-footer section hr {
-    width: 50%;
-  }
-  /* End Footer */
-
-  /* Home Page */
-  .container .jumbotron {
-    margin-top: 30px;
-    padding: 0;
-  }
-  #menu-tile, #specials-tile {
-    width: 360px;
-    margin: 0 auto 15px;
-  }
-
-  .menu-item-photo {
-    margin-right: auto;
-  }
-  .menu-item-tile .menu-item-price {
-    text-align: center;
-  }
-  .menu-item-description {
-    text-align: center;;
-  }
+.aboutPage button {
+	margin-top: 35px;
+	border-radius: 50px;
+	font-size: 1.3em;
+	background-color: white;
+	color: blue;
+	text-decoration: none;
+	border: solid 1px blue; 
+	text-align: center;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	animation: wiggle 2.7s infinite;
 }
 
 
-/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-@media (max-width: 479px) {
-  /* Header */
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 5px;
-    font-size: 6vw;
-  }
-  /* End Header */
-  
-  /* Home page */
-  #menu-tile, #specials-tile {
-    width: 280px;
-    margin: 0 auto 15px;
-  }
+.aboutPage button:hover {
+	background-color: blue;
+	color: white;
+	transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s; /* Safari */
+}
 
-  .col-xxs-12 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    float: left;
-    width: 100%;
+.cj-btn2 {
+	display: none;
+}
+
+.toggle i {
+	transform: scale(0.8);
+}
+
+
+/*SHAKER*/
+@keyframes wiggle {
+  2% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
   }
+  4% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  6% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  8% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  10% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+  12% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  14% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+  16% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  18% {
+    -webkit-transform: translateX(1px) rotate(0);
+    transform: translateX(1px) rotate(0);
+  }
+  20% {
+    -webkit-transform: translateX(-1px) rotate(0);
+    transform: translateX(-1px) rotate(0);
+  }
+}
+
+.Article {
+	display: none;
 }
 
 
 
+/* contact me page*/
+.main-content3 {
+	display: none;
+	margin-top: 60px;
+	transition: 3s ease;
+	-webkit-transition: 3s ease; /* Safari */
+}
+
+.main-content3 {
+	color: black;
+
+}
+
+.main-content3 a {
+	color: black;
+}
+.main-content3 a:hover, .main-content3 a:focus {
+	text-decoration: none;
+	
+}
+
+
+.email-setting button {
+	background-color: grey;
+	color: white;
+	border-radius: 50px;
+	border: none;
+	margin: 0px 20px;
+}
+
+.email-setting i {
+	padding: 10px;
+}
+
+.email {
+	display: none;
+}
+
+.email a {
+	padding: 10px 10px 100px 10px;
+	color: white;
+	
+}
+
+.socials button{
+	background-color: grey;
+	color: white;
+	border-radius: 50%;
+	border: none;
+	margin: 10px;
+	padding: 9px;
+}
+
+.socials i {
+	height: 20px;
+	width: 35px;
+}
+
+
+.facebook button {
+	background-color: white;
+	border: solid 2px blue;
+	transition: 0.4s ease;
+}
+
+.twitter button {
+	background-color: white;
+	border: solid 2px DarkCyan;
+	transition: 0.4s ease;
+}
+
+.linkedin button {
+	background-color: white;
+	border: solid 2px DarkSlateBlue;
+	transition: 0.4s ease;
+}
+
+.youtube button {
+	background-color: white;
+	border: solid 2px red;
+	transition: 0.4s ease;
+}
+
+.instagram button {
+	background-color: white;
+	border: solid 2px purple;
+	transition: 0.4s ease;
+}
+
+.behance button {
+	background-color: white;
+	border: solid 2px MidnightBlue;
+	transition: 0.4s ease;
+}
+
+
+.facebook i {
+	color: blue;
+}
+
+.twitter i {
+	color: DarkCyan;
+}
+
+.linkedin i {
+	color: DarkSlateBlue;
+}
+
+.youtube i {
+	color: red;
+}
+
+.instagram i {
+	color: purple;
+}
+
+.behance i {
+	color: MidnightBlue;
+}
+
+
+.facebook button:hover {
+	background-color: blue;
+	border: none;
+}
+
+.twitter button:hover {
+	background-color: DarkCyan;
+	border: none;
+}
+
+.linkedin button:hover {
+	background-color: DarkSlateBlue;
+	border: none;
+}
+
+.youtube button:hover {
+	background-color: red;
+	border: none;
+}
+
+.instagram button:hover {
+	background-color: purple;
+	border: none;
+}
+
+.behance button:hover {
+	background-color: MidnightBlue;
+	border: none;
+}
+
+
+.facebook i:hover, .twitter i:hover, .linkedin i:hover, .youtube i:hover, .instagram i:hover, .behance i:hover {
+	color: white;
+}
+
+
+
+
+#header-content {
+	text-align: center;
+	margin: 80px;
+	font-family: 'Coda', cursive;
+
+}
+
+
+
+.button {
+	background: Gold;
+	width: 125px;
+	text-align: center;
+	margin-top:5px;
+	font-size: 1em;
+}
+
+
+.quote {
+	padding: 30px;
+}
+
+.quote p {
+	text-align: right;
+	
+}
+
+/* All picture rows*/
+./*caption*/ {
+	text-align: left;
+	width: 100%;
+
+
+}
+
+.details {
+	text-align: left;
+	width: 100%;
+	float: right;
+}
+
+/* All picture rows ends*/
+
+
+.figure img {
+	width: 100%;
+
+}
+
+.figure-1, .figure-2, .figure-3, .figure-4 {
+	margin-bottom: 150px;
+}
+
+.figure-1 {
+	margin-top: 50px;
+}
+
+/* 1st Pic*/
+.caption-1 {
+	text-align: left;
+	width: 100%;
+
+
+}
+
+.details-1 {
+	text-align: left;
+	width: 100%;
+	float: right;
+}
+
+
+/* 2nd Pic*/
+.caption-2 {
+	text-align: left;
+	width: 100%;
+
+
+}
+
+.details-2 {
+	text-align: left;
+	width: 100%;
+	float: right;
+}
+
+
+/* 3rd Pic*/
+.caption-3 {
+	text-align: left;
+	width: 100%;
+
+
+}
+
+.details-3 {
+	text-align: left;
+	width: 100%;
+	float: right;
+}
+
+/* 4th Pic*/
+.caption-4 {
+	text-align: left;
+	width: 100%;
+
+
+}
+
+.details-4 {
+	text-align: left;
+	width: 100%;
+	float: right;
+}
+
+.CJ-Art {
+	text-align: center;
+	width: 100%;
+}
+
+.main-content h3, .main-content2 h3 {
+	font-size: 1.8em;
+}
+
+.main-content p, .main-content2 p {
+	font-size: 1.3em;
+}
+
+.main-content h2, .main-content2 h2 {
+	margin: 30px;
+}
+
+.social-media {
+	text-align: center;
+}
+
+.social-media img {
+	text-align: center;
+	width: 70px;
+	margin: 50px;
+}
+
+
+.cell {
+	margin: 4px;
+}
+
+footer {
+	text-transform: uppercase;
+	margin-top: 100px;
+}
+
+footer h3 {
+	font-size: .8em;
+}
+
+.toggle1 {
+	background-color: #FFF8DC;
+	border: none;
+	margin: 10px;
+}
+
+.toggle2 {
+	background-color: #FFF8DC;
+	border: none;
+	margin: 10px;
+}
+
+
+.dia {
+	display: none;
+}
+
+.noche {
+	display: inline;
+}
+
+
+
+
+
+
+/* Acsessories for asthetics*/
+
+
+
+/*Selection color*/
+::-moz-selection { /* Code for Firefox */
+  color: black;
+  background: gold;
+}
+
+::selection {
+  color: black;
+  background: gold;
+}
+/*end of selection color*/
+
+
+/* scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/*end of scroll bar*/
